@@ -3,9 +3,9 @@ Recently, we discovered a logic vulnerability that may cause Open5gs SMF to cras
 The specific causes of the vulnerability are as follows:
 
 ## Vulnerability description
-When processing PFCP packet, a memory leak in UPF `src/upf/pfcp-path.c` from open5gs causing a DoS vulnerability.
-### UPF pfcp-path
-Function `pfcp_recv_cb` from `src/upf/pfcp-path.c` will be called when receiving pfcp connection.
+When processing PFCP packet, a memory leak in SMF `src/smf/pfcp-path.c` from open5gs causing a DoS vulnerability.
+### SMF pfcp-path
+Function `pfcp_recv_cb` from `src/smf/pfcp-path.c` will be called when receiving pfcp connection.
 
 > src/smf/pfcp-path.c
 ```c=95
