@@ -77,8 +77,7 @@ ogs_pfcp_node_t *ogs_pfcp_node_add(
 
 Instead of freeing the nodes after using or encountering an error, these nodes are freed only after the termination of SMF by calling function `ogs_pfcp_context_final`.
 
-So making more than 64 pfcp connections will crash the UPF causing DoS.
-
+So making more than 64 pfcp connections will crash the SMF causing DoS.
 
 ### ogs_pfcp_node_pool
 
@@ -108,7 +107,7 @@ ogs_pool_init(&ogs_pfcp_node_pool, ogs_app()->pool.nf);
 
 ## POC
 The vulnerability can be triggered simply by sending more than 64 invalid pfcp packets through different sockets.
-![](https://github.com/ToughRunner/Open5gs_bugreport3/blob/main/1.png)
+![](https://github.com/ToughRunner/Open5gs_bugreport4/blob/main/1.png)
 
 ## Upadate
 We have reported this vulnerability to the vendor through email at 19 Sep 2022, but this bug has not been fixed yet.
